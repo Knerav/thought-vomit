@@ -7,9 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <div class = "container">
-      <%= render 'form' %>
-      <%= link_to 'Back', articles_path %>
-    </div>
+    <% if @article.errors.any? %>
+      <h2>Please correct the following errors:</h2>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
   </body>
 </html>

@@ -8,30 +8,7 @@
   </head>
   <body>
     <div class = "container">
-      <h1>Edit article:</h1>
-
-      <% if @article.errors.any? %>
-        <h2>Please correct the following errors:</h2>
-        <ul>
-          <% @article.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <%= form_with(model: @article, local: true) do |f| %>
-        <p>
-          <%= f.label :title %><br/>
-          <%= f.text_field :title %>
-        </p>
-        <p>
-          <%= f.label :description %><br/>
-          <%= f.text_area :description %>
-        </p>
-        <p>
-          <%= f.submit %>
-        </p>
-      <% end %>
+      <%= render 'form' %>
       <%= link_to 'Cancel', articles_path %>
     </div>
   </body>

@@ -8,8 +8,9 @@
   </head>
   <body>
     <div class = "container">
-      <%= render 'form' %>
-      <%= link_to 'Back', articles_path %>
+      <% flash.each do |name, message| %>
+        <%= message %>
+      <% end %>
     </div>
   </body>
 </html>
