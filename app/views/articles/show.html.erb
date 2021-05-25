@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Article</title>
   </head>
+  
   <body>
-    <div class = "container">
-      <h1>What is ThoughtVomit?</h1>
-      <h2>This site was designed to house ALL your thoughts, with no filter!</h2>
+    <div class= "container">
+      <h1>Showing Article Details</h1>
+      <p><strong>Title:</strong><%= @article.title %></p>
+      <p><strong>description:</strong><%= @article.description %></p>
     </div>
   </body>
 </html>
