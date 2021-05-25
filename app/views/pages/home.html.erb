@@ -1,19 +1,15 @@
-<div class="container-fluid bg-dark text-light p-5" id="jumbotron">
-  <div class="container" id="jumbotron-text">
-    <h1 class="display-4">A repository for all your thoughts</h1>
-    <hr>
-    <p>Your thoughts, be it by-the-way, well researched, or downright spontaneous opinions, deserve a forever-home.</p>
-    <a href="#" class="btn btn-success">Create thought</a>
+<div id="page-content">
+  <div class="container-fluid bg-light text-light p-5" id="jumbotron">
+    <div class="container" id="jumbotron-text">
+      <h1 class="display-4">A repository for all your thoughts</h1>
+      <hr>
+      <p>Your thoughts, be it by-the-way, well researched, or downright spontaneous opinions, deserve a forever-home.</p>
+      <a href="#" class="btn btn-outline-dark">Signup</a> |
+      <%= link_to "Create thought", new_article_path, class: "btn btn-success" %>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <%= link_to 'About', about_path %> |
-  <%= link_to 'Articles listing', articles_path %>
-</div>
-
-<div id="page-content">
-</div>
 <footer id="sticky-footer" class="py-3 bg-dark text-white-50">
     <div class="container text-center">
       <small>ThoughtVomit©</small>
