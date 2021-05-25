@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-  </head>
-  
-  <body>
-    <div class="container">
-      <h1>Welcome to Thought-Vomit</h1>
-      <h2>Dump your smart, funny, or even silly thoughts onto this platform.</h2>
-      <%= link_to 'About', about_path %> |
-      <%= link_to 'Articles listing', articles_path %>
+<div class="container-fluid bg-dark text-light p-5" id="jumbotron">
+  <div class="container" id="jumbotron-text">
+    <h1 class="display-4">Welcome to your thoughts repository</h1>
+    <hr>
+    <p>Dump your smart, funny or downright silly thoughts into this platform</p>
+    <a href="#" class="btn btn-success">Create article</a>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to 'About', about_path %> |
+  <%= link_to 'Articles listing', articles_path %>
+</div>
+
+<div id="page-content">
+</div>
+<footer id="sticky-footer" class="py-3 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>ThoughtVomit©</small>
     </div>
-  </body>
-</html>
+  </footer>
+</body>

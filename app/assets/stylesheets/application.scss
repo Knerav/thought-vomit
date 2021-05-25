@@ -14,11 +14,42 @@
 @import "bootstrap";
 
 .navbar {
-  background-color: rgb(33, 155, 255) !important;
+  background-color: rgb(15, 147, 255) !important;
+  position: relative;
 }
 
-.navbar-brand {
-  font-size: 2rem;
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color:white;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#jumbotron {
+  background-image: asset-url('new-jumbo-back.jpg');
+  height: 400px;
+}
+
+#jumbotron-text {
+  padding-top: 55px;
+}
+
+.display-4, p, hr {
+  color: rgb(49, 49, 49);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
 }
 
 h1 {
