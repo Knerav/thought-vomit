@@ -16,7 +16,7 @@
           <tr>
             <th>Title</th>
             <th>Description</th>
-            <th>Options</th>
+            <th colspan="3">Options</th>
           </tr>
         </thead>
         
@@ -27,11 +27,13 @@
               <td><%= article.description %></td>
               <td><%= link_to 'Show', article_path(article) %></td>
               <td><%= link_to 'Edit', edit_article_path(article) %></td>
-              <td><%= link_to 'Delete', article_path(article), method: :Delete %></td>
+              <td><%= link_to 'Delete', article_path(article), method: :Delete, data: {confirm: "Are you sure?"} %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
+      <%= link_to 'Home', root_path %> |
+      <%= link_to 'Create new article', new_article_path %>
     </div>    
   </body>
 </html>
