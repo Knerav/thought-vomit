@@ -27,16 +27,18 @@
 }
 
 #jumbotron {
-  background-image: asset-url('new-jumbo-back.jpg');
+  background-image: asset-url('background-new.jpg');
   height: 400px;
+  background-size: 150%;
+  background-blend-mode: difference;
 }
 
 #jumbotron-text {
   padding-top: 55px;
 }
 
-.display-4, p, hr {
-  color: rgb(49, 49, 49);
+.display-4 {
+  color: rgb(255, 255, 255);
 }
 
 html,
@@ -62,4 +64,8 @@ h2 {
 
 .text-primary {
   text-decoration: none;
+}
+
+#page-content {
+  background-color: rgb(248, 245, 245);
 }

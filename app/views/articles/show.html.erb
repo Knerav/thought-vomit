@@ -7,28 +7,30 @@
     <title>Article</title>
   </head>
   <body>
-    <div id="page-content">
-      <h3 class="text-center text-capitalize mt-5"><%= @article.title %></h3>
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-8 mt-5">
-            <div class="card text-center shadow mb-5 bg-white rounded">
-              <div class="card-header fw-light fst-italic">
-                by Knerav Kodolikar
-              </div>
-              <div class="card-body">
-                <%= @article.description %></p>
-                <%= link_to 'Back', articles_path, class: "btn btn-outline-primary" %> |
-                <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary" %> |
+    <h3 class="text-center text-capitalize mt-5"><%= @article.title %></h3>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-8 mt-5">
+          <div class="card shadow mb-5 bg-white rounded">
+            <div class="card-header text-center fw-light fst-italic">
+              by Knerav Kodolikar
+            </div>
+            <div class="card-body">
+              <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+              <div class="card-text text-center">
+                <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary" %>
                 <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Easy there, are you absolutely sure?"}, class: "btn btn-danger" %>
               </div>
-              <div class="card-footer text-muted">
-                <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
-              </div>
+            </div>
+            <div class="card-footer text-muted text-center">
+              <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to 'Back', articles_path, class: "btn btn-outline-secondary" %>
     </div>
   </body>
 </html>
