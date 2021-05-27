@@ -9,7 +9,12 @@
   <body>
     <div class = "container">
       <% flash.each do |name, message| %>
-        <%= message %>
+        <div class="row mt-4">
+          <div class="alert alert-success alert-dissmissible fade show" role="alert">
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
       <% end %>
     </div>
   </body>

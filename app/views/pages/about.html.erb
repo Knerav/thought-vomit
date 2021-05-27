@@ -8,10 +8,13 @@
   </head>
   <body>
     <div class = "container">
-      <h1>What is ThoughtVomit?</h1>
-      <h2>This site was designed to house ALL your thoughts, with no filter!</h2>
-      <%= link_to 'Home', root_path %> |
-      <%= link_to 'Articles listing', articles_path %>
+      <div class="card-fluid shadow p-5 mt-5">
+        <h2>What is ThoughtVomit?</h2>
+        <h4>This site was designed to house ALL your thoughts, without a filter!</h4>
+        <hr>
+        <%= link_to 'Home', root_path, class: "btn btn-secondary" %>
+        <%= link_to 'Articles listing', articles_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </body>
 </html>
