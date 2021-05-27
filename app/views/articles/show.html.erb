@@ -6,15 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article</title>
   </head>
-  
   <body>
-    <div class= "container">
-      <h1>Showing Article Details</h1>
-      <p><strong>Title:</strong><%= @article.title %></p>
-      <p><strong>description:</strong><%= @article.description %></p>
-      <%= link_to 'Edit', edit_article_path(@article) %> |
-      <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"} %> |
-      <%= link_to 'Back', articles_path %>
+    <div id="page-content">
+      <h3 class="text-center text-capitalize mt-5"><%= @article.title %></h3>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-8 mt-5">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+              <div class="card-header fw-light fst-italic">
+                by Knerav Kodolikar
+              </div>
+              <div class="card-body">
+                <%= @article.description %></p>
+                <%= link_to 'Back', articles_path, class: "btn btn-outline-primary" %> |
+                <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary" %> |
+                <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Easy there, are you absolutely sure?"}, class: "btn btn-danger" %>
+              </div>
+              <div class="card-footer text-muted">
+                <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

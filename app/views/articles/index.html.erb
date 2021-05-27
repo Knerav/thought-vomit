@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>articles list</title>
   </head>
-  
   <body>
     <div id="page-content">
-      <h2 class="text-center mt-5">Articles</h2>
+      <h3 class="text-center mt-5">Articles</h3>
       <div class = "container">
         <% @article.each do |article| %>
           <div class="row justify-content-md-center">
@@ -23,7 +22,7 @@
                   <p class="card-text"><%= truncate(article.description, length: 100) %></p>
                   <%= link_to 'View', article_path(article), class: "btn btn-outline-primary" %> |
                   <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-primary" %> |
-                  <%= link_to 'Delete', article_path(article), method: :Delete, data: {confirm: "Are you crazy!? But if that's what you want..."}, class: "btn btn-outline-danger" %>
+                  <%= link_to 'Delete', article_path(article), method: :Delete, data: {confirm: "Easy there, are you absolutely sure?"}, class: "btn btn-outline-danger" %>
                 </div>
                 <div class="card-footer text-muted">
                   <small>Created <%= time_ago_in_words(article.created_at) %> ago, edited <%= time_ago_in_words(article.updated_at) %> ago</small>
