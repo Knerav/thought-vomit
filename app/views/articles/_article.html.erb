@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class = "container">
+      <% @article.each do |article| %>
+        <div class="row justify-content-md-center">
+          <div class="col-8 mt-5">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+              <div class="card-header fw-light fst-italic">
+                by <%= article.user.username if article.user %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-primary" %></h5>
+                <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+                <%= link_to 'View', article_path(article), class: "btn btn-outline-primary" %> |
+                <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-primary" %> |
+                <%= link_to 'Delete', article_path(article), method: :Delete, data: {confirm: "Easy there, are you absolutely sure?"}, class: "btn btn-outline-danger" %>
+              </div>
+              <div class="card-footer text-muted">
+                <small>Created <%= time_ago_in_words(article.created_at) %> ago, edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>  
