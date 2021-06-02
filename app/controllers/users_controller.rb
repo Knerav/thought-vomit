@@ -2,11 +2,11 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @article = @user.articles
+    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.new(user_whitelist)
     if @user.save
       flash[:notice] = "Welcome to ThoughtVomit, #{@user.username}! Account successfully created"
-      redirect_to articles_path
+      redirect_to @user
     else
       render 'new'
     end 
