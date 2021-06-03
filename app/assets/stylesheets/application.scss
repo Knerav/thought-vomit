@@ -28,6 +28,7 @@
 
 #jumbotron {
   background-image: asset-url('background-new.jpg');
+  background-position-y: top;
   height: 400px;
   background-size: 150%;
   background-blend-mode: difference;

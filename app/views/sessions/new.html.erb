@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User</title>
+  </head>
+  <body>
+    <div class = "container">
+      <h2 class="text-center mt-5">Login</h2>
+      <div class = "row justify-content-center">
+        <div class="card p-4 mt-5 shadow mb-5 col-8">
+          <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+            
+            <div class="mb-4">
+              <%= f.label :email, class: "form-label" %>
+              <%= f.email_field :email, class: "form-control", id: "email" %>
+              <div id="emailHelp" class="form-text">The a valid email that is a maximum of 105 characters</div>
+            </div>
+            
+            <div class="mb-4">
+              <%= f.label :password, class: "form-label" %>
+              <%= f.password_field :password, class: "form-control", id: "password" %>
+              <div id="passwordHelp" class="form-text">Enter your password</div>
+            </div>
+            
+            <%= link_to 'Cancel', root_path, class: "btn btn-outline-secondary" %>
+            <%= f.submit "Login", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
