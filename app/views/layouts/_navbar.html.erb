@@ -23,10 +23,13 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary" type="submit">Search</button>
-        <%= link_to 'Login', login_path, class: "btn btn-success ms-1" %>
-        <%= link_to 'Logout', logout_path, class: "btn btn-outline-secondary ms-1", method: :delete %> 
+        <% if logged_in? %>
+          <%= link_to current_user.username, user_path(current_user), class: "btn btn-primary ms-1" %>
+          <%= link_to 'Logout', logout_path, class: "btn btn-secondary ms-1", method: :delete %>
+        <% else %>
+          <%= link_to 'Login', login_path, class: "btn btn-primary ms-1" %>
+          <%= link_to 'Signup', signup_path, class: "btn btn-primary ms-1" %>
+        <% end %>
       </form>
     </div>
   </div>
