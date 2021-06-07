@@ -15,22 +15,32 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><%= link_to 'View articles', articles_path, class: "dropdown-item" %></li>
-            <li><%= link_to 'Create article', new_article_path, class: "dropdown-item" %></li>
+            <% if logged_in? %>
+              <li><%= link_to 'Create article', new_article_path, class: "dropdown-item" %></li>
+            <% end %>
           </ul>
         </li>
         <li class="nav-item">
           <%= link_to "Bloggers", users_path, class: "nav-link active" %>
         </li>
       </ul>
-      <form class="d-flex">
+      <class="container">
         <% if logged_in? %>
-          <%= link_to current_user.username, user_path(current_user), class: "btn btn-primary ms-1" %>
-          <%= link_to 'Logout', logout_path, class: "btn btn-secondary ms-1", method: :delete %>
+          <li class="nav-item dropdown btn">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_user.username %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to 'View your profile', user_path(current_user), class: "dropdown-item" %></li>
+              <li><%= link_to 'Edit your profile', edit_user_path(current_user), class: "dropdown-item" %></li>
+            </ul>
+          </li>
+          <%= link_to 'Logout', logout_path, class: "btn btn-secondary", method: :delete %>
         <% else %>
           <%= link_to 'Login', login_path, class: "btn btn-primary ms-1" %>
           <%= link_to 'Signup', signup_path, class: "btn btn-primary ms-1" %>
         <% end %>
-      </form>
+      </div>
     </div>
   </div>
 </nav>
