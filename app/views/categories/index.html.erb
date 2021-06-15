@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class = "container">
+      <h2 class="text-center mt-5">Browse all our categories!</h2>
+      <div class="flickr_pagination mt-4">
+        <%= will_paginate @categories, :container => false %>
+      </div>
+      <div class = "container">
+        <% @categories.each do |category| %>
+          <div class="row justify-content-md-center">
+            <div class="col-4 mt-4">
+              <div class="card text-center shadow mb-3 bg-white rounded">               
+                <div class="card-body">
+                  <h5 class="card-title"><%= link_to category.name, category_path(category), class: "text-primary" %></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="flickr_pagination mb-4">
+        <%= will_paginate @categories, :container => false %>
+      </div>
+    </div>
+  </body>
+</html>
