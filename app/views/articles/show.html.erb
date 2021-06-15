@@ -15,6 +15,11 @@
             <div class="card-header text-center fw-light fst-italic">
               by <%= @article.user.username if @article.user %> 
               <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+              <% if @article.categories.any? %>
+                <div class="mt-3 mb-2">
+                  <%= render @article.categories %>
+                </div>
+              <% end %>
             </div>
             <div class="card-body">
               <div class="card-text text-left"><%= simple_format(@article.description) %></div>

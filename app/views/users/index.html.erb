@@ -23,7 +23,8 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= user.username %></h5>
                   <%= link_to gravatar_for(user, size: 110), user %>
-                  <p class="card-text mt-3"><%= pluralize(user.articles.count, "article") %></p>
+                    <div class="badge rounded-pill bg-secondary mt-3 mb-2"><%= pluralize(user.articles.count, "article") %></div>
+                    <br/>
                   <%= link_to 'View profile', user_path(user), class: "btn btn-primary mt-2" %>
                   <% if logged_in? %>
                     <% if user == current_user %>
