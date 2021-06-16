@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-
-  def setup
+  setup do
     @category = Category.new(name: "Sports")
   end
 
@@ -30,5 +29,4 @@ class CategoryTest < ActiveSupport::TestCase
     @category.name = "a" * 26
     assert_not @category.valid?
   end
-
 end
