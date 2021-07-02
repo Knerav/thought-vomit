@@ -1,7 +1,47 @@
-<div class="container-fluid bg-light text-light p-5" id="jumbotron">
-  <div class="container" id="jumbotron-text">
-    <h1 class="display-4"><strong>A repository for all your thoughts</strong></h1>
-    <hr>
-    <p><strong>Your thoughts, be it by-the-way, well researched, or downright spontaneous opinions, deserve a forever-home.</strong></p>
+<div class="container-fluid" id="jumbotron">
+  <div class="row">
+    <div class="col">
+
+      <div class="container" id="jumbotron-text-align">
+        <div class="display-6" id="jumbotron-text">Welcome to ThoughtVomit</div>
+        <p class="lead" id="jumbotron-text">Share all your thoughts with your friends.</p>
+        <%= link_to "Create thought", new_article_path, class: "btn mt-1", id: "button-format" %>
+      </div>
+    
+    </div>
   </div>
+
+</div>
+
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="col">
+
+      <h4 id="categories-text">Browse categories</h4>
+
+    </div>
+  </div>
+
+  <div class="row mt-5 mb-4">
+  <% @categories.each do |category| %>
+    <div class="col-2 mb-5">
+
+      <div class="card shadow" style="width: 9.5rem;" id="card-category-home">
+        <div class="card-body">
+          <h5 class="card-title"><%= category.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= category.articles.count %> articles</h6>
+        </div>
+        <div class="card-footer text-center">
+          <%= link_to "View articles", articles_path, class: "btn btn-sm", id: "button-articles-format" %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+      
+
+    </div>
+  </div>
+
 </div>
